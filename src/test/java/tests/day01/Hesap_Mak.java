@@ -28,7 +28,7 @@ AndroidDriver<AndroidElement>driver;
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\Calculator_8.4 (503542421)_Apkpure (3).apk");
-        //caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\Apk Bilgisi_2.3.4_apkcombo.com.apk");
+
         //App capability bir uygulama eger yuklu degilse uygulamayi cihaza yuklemek icin kullanilir
         //Eger uygulama yukluyse ve tekrardan test calistirilirsa App capability uygulama yuklu mu diye kontrol eder
         //eger yuklu degilse uygulamayi yukler, eger yukluyse uygulamayi acar
@@ -40,11 +40,27 @@ AndroidDriver<AndroidElement>driver;
         // uygulamanin yuklendigini dogrular(isInstalled)
         Assert.assertTrue(driver.isAppInstalled("com.google.android.calculator"));
 
-
-
-
-
         // uygulamanin acildigini dogrular
+        Assert.assertTrue(driver.findElementById("com.google.android.calculator:id/clr").isDisplayed());
+
         // 400 un 3 katininin 1200 oldugunu hesap makinasindan dogrulayalim
+        driver.findElementByAccessibilityId("4").click();
+        driver.findElementByAccessibilityId("0").click();
+        driver.findElementByAccessibilityId("0").click();
+        driver.findElementByAccessibilityId("multiply").click();
+        driver.findElementByAccessibilityId("3").click();
+
+       String sonuc= driver.findElementById("com.google.android.calculator:id/result_preview").getText();
+       int beklenenSonuc=1200;
+       Assert.assertEquals(Integer.parseInt(sonuc),beklenenSonuc);
+
+
+
+
+
+
+
+
+
     }
 }
