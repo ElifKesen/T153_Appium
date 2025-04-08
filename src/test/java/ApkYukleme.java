@@ -19,7 +19,8 @@ public class ApkYukleme {
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         //caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\Calculator_8.4 (503542421)_Apkpure (3).apk");
         //caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\Apk Bilgisi_2.3.4_apkcombo.com.apk");
-        caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\arabam-com-5-4-1.apk");
+        //caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\arabam-com-5-4-1.apk");
+        caps.setCapability(MobileCapabilityType.APP,"C:\\Users\\elifk\\IdeaProjects\\T153_Appium\\Apps\\To-Do List - Schedule Planner_1.02.61.0928_APKPure.apk");
 
         driver=new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),caps);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
