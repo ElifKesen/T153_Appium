@@ -54,22 +54,29 @@ public class ToDoList {
 
       // görev adi girilir
         Thread.sleep(1500);
-        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/task_create_input").sendKeys("Parka git");
-
+        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/task_create_input").sendKeys("Kitap oku");
 
         // görev kaydedilir
         Thread.sleep(1500);
         driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/task_create_btn").click();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
 
         TouchAction action=new TouchAction<>(driver);
         for (int i = 0; i < 3; i++) {
             action.press(PointOption.point(800,1200)).release().perform();
         }
 
+       // görev silinir
+        Thread.sleep(2500);
+        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/task_text").click();
+        Thread.sleep(1500);
+        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/task_detail_more").click();
+        Thread.sleep(1500);
+        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/detail_delete").click();
+        driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/dialog_confirm").click();
 
-// görev silinir
-// Görev olusturma sayfasina geri dönüldügü dogrulanir
+       // Görev olusturma sayfasina geri dönüldügü dogrulanir
+        Assert.assertTrue(driver.findElementById("todolist.scheduleplanner.dailyplanner.todo.reminders:id/iv_task_add").isDisplayed());
 
 
     }
