@@ -72,18 +72,29 @@ public class Kiwi {
       // gidis tarihi 23 Nisan olarak secilir ve set date e tiklanir
         page.DepartureButonu.click();
         Thread.sleep(2000);
-       // ReusableMethods.koordinatTiklamaMethodu(530,1250,300);
-        ReusableMethods.koordinatKaydirmaMethodu(530,1490,250,1250,100);
         ReusableMethods.koordinatTiklamaMethodu(530,1250,300);
+        /*
+        ReusableMethods.koordinatKaydirmaMethodu(560,1490,250,1250,80);
+        ReusableMethods.koordinatTiklamaMethodu(250,1250,500);
+
+         */
 
         Thread.sleep(2000);
         page.setDatebutonu.click();
 
-
-
         // search butonuna tiklanir
+        Thread.sleep(2000);
+        page.searchbutonu.click();
+
       // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        page.bestbutonu.click();
+        page.enUcuzbutonu.click();
+        page.Stopbutonu.click();
+        page.nonStopbutonu.click();
+
       // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+      String fiyatBilgisi= page.fiyatBilgisi.getText();
+      driver.sendSMS("112233","Sectiginiz ucusun fiyat bilgisi; "+fiyatBilgisi);
 
 
     }
