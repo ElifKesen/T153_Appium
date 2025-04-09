@@ -14,4 +14,13 @@ public class ReusableMethods {
                 .release()
                 .perform();
     }
+
+    public static void koordinatKaydirmaMethodu(int startX, int startY, int endX, int endY, int beklemeSuresiMillis) {
+        TouchAction<?> action = new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(startX, startY))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(beklemeSuresiMillis)))
+                .moveTo(PointOption.point(endX, endY))
+                .release()
+                .perform();
+    }
 }

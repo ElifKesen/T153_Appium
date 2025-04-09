@@ -20,7 +20,7 @@ public class Arabam {
 
     AndroidDriver<AndroidElement> driver;
     @BeforeTest
-    public void kurulem() throws MalformedURLException {
+    public void kurulum() throws MalformedURLException {
         DesiredCapabilities caps=new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 4");
         //caps.setCapability("deviceName","Pixel 4");

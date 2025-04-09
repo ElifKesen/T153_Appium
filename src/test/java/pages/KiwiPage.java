@@ -26,5 +26,22 @@ public class KiwiPage {
     public WebElement ClearButton;
 
     @FindBy(xpath = "//*[@class='android.widget.EditText']")
-    public WebElement KalkisYeriYazmaKutusu;
+    public WebElement KalkisVarisYeriYazmaKutusu;
+
+    @FindBy(xpath = "(//*[@class='android.widget.Button'])[2]")
+    public WebElement sehirSecmeButonu;
+
+    @FindBy(xpath = "//*[@text='Choose']")
+    public WebElement ChooseButonu;
+
+    @FindBy(xpath = "//*[@text='To:']")
+    public WebElement ToButonu;
+
+    @FindBy(xpath = "//*[@text='Departure:']")
+    public WebElement DepartureButonu;
+
+    @FindBy(xpath="//*[@text='Set date']")
+    public WebElement setDatebutonu;
+
+
 }

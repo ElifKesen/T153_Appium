@@ -45,20 +45,42 @@ public class Kiwi {
 
       // kalkis yapilacak sehir Ankara girilir ve sec e tiklanir
         Thread.sleep(2000);
-        page.KalkisYeriYazmaKutusu.click();
+        page.KalkisVarisYeriYazmaKutusu.click();
 
         if (driver.isKeyboardShown()){
             driver.getKeyboard().pressKey("Ankara");
         }else {
-            page.KalkisYeriYazmaKutusu.sendKeys("Ankara");
+            page.KalkisVarisYeriYazmaKutusu.sendKeys("Ankara");
         }
-
-
-
-
+        Thread.sleep(2000);
+        page.sehirSecmeButonu.click();
+        page.ChooseButonu.click();
 
       // varis  secenegi Frankfurt secilir
+        page.ToButonu.click();
+        page.KalkisVarisYeriYazmaKutusu.click();
+        Thread.sleep(2000);
+        if (driver.isKeyboardShown()){
+            driver.getKeyboard().pressKey("Frankfurt");
+        }else {
+            page.KalkisVarisYeriYazmaKutusu.sendKeys("Frankfurt");
+        }
+        Thread.sleep(2000);
+        page.sehirSecmeButonu.click();
+        page.ChooseButonu.click();
+
       // gidis tarihi 23 Nisan olarak secilir ve set date e tiklanir
+        page.DepartureButonu.click();
+        Thread.sleep(2000);
+       // ReusableMethods.koordinatTiklamaMethodu(530,1250,300);
+        ReusableMethods.koordinatKaydirmaMethodu(530,1490,250,1250,100);
+        ReusableMethods.koordinatTiklamaMethodu(530,1250,300);
+
+        Thread.sleep(2000);
+        page.setDatebutonu.click();
+
+
+
         // search butonuna tiklanir
       // en  ucuz ve aktarmasiz filtrelemeleri yapilir
       // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
