@@ -24,7 +24,11 @@ public class AllCurrency {
 
      // Uygulamanin acildigi dogrulanir
         Assert.assertTrue(page.uygulamaAdi.isDisplayed());
-        //Assert.assertTrue(driver.findElementByXPath("//*[@text='CURRENCY CONVERTER']").isDisplayed());
+       // Assert.assertTrue(driver.findElementByXPath("//*[@text='CURRENCY CONVERTER']").isDisplayed());
+        /*
+       // Assert.assertTrue(driver.findElementByXPath("//*[@text='WÄHRUNGSUMRECHNER']").isDisplayed());
+        Gercek telefonun dili Almanca oldugu icin Almanca text almak gerekti
+         */
 
      // Cevirmek istedigimiz para birimi Kanada dolari olarak secilir
         ReusableMethods.koordinatTiklamaMethodu(350,450,500);
